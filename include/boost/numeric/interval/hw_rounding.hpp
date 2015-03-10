@@ -1,6 +1,6 @@
 /* Boost interval/hw_rounding.hpp template implementation file
  *
- * Copyright 2002 Hervé Brönnimann, Guillaume Melquiond, Sylvain Pion
+ * Copyright 2002 HervÃ© BrÃ¶nnimann, Guillaume Melquiond, Sylvain Pion
  * Copyright 2005 Guillaume Melquiond
  *
  * Distributed under the Boost Software License, Version 1.0.
@@ -29,6 +29,8 @@
 #  include <boost/numeric/interval/detail/alpha_rounding_control.hpp>
 #elif defined(ia64) || defined(__ia64) || defined(__ia64__)
 #  include <boost/numeric/interval/detail/ia64_rounding_control.hpp>
+#elif defined(i386) && defined(__SUNPRO_CC) 
+#  include <boost/numeric/interval/detail/c99_rounding_control.hpp>
 #endif
 
 #if defined(BOOST_NUMERIC_INTERVAL_NO_HARDWARE) && (defined(__USE_ISOC99) || defined(__MSL__))
